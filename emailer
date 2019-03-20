@@ -1,0 +1,20 @@
+#!/usr/bin/python3
+
+import smtplib
+
+sender = 'finn@autism.com'
+receivers = ['to@todomain.com']
+
+message = """From: From Finny <finn@autism.com>
+To: To Person <to@todomain.com>
+Subject: SMTP e-mail test
+
+This is a test e-mail message.
+"""
+
+try:
+   smtpObj = smtplib.SMTP('localhost')
+   smtpObj.sendmail(sender, receivers, message)         
+   print "Successfully sent email"
+except SMTPException:
+   print "Error: unable to send email"
